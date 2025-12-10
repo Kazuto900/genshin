@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Liste des personnage de Genshin Impact.</title>
+<link rel="stylesheet" href="styleamber.css?v=2">
+</head>
+<body>
+<h1 class="encadre-arrondi">Amber</h1>
+<div class="encadre-paragraphe"><h2>Présentation du personnage.</h2>
+<p>Voici donc un moyen de naviguer à travers les diverses sujets concernant le personnage d'Amber.</p>
+<div class="tabs-container">
+    <div class="tabs-menu">
+        <a href="#tab1" class="tab-link active">Présentation du personnage</a>
+        <a href="#tab2" class="tab-link">Histoire</a>
+        <a href="#tab3" class="tab-link">Gameplay</a>
+        <a href="#tab4" class="tab-link">Place dans la META</a>
+        <a href="#tab5" class="tab-link">Guides</a>
+    </div>
+    <div class="tabs-content">
+        <div id="tab1" class="tab-pane active">
+            <h2>Bienvenue sur l'Accueil</h2>
+            <p>Informations générales sur Genshin Impact.</p>
+        </div>
+
+        <div id="tab2" class="tab-pane">
+            <h2>Liste des Personnages</h2>
+            <p>Présentation des héros jouables.</p>
+            <a href="file:///C:/Users/mouradali2/Downloads/sihrgdb/Index_2.html">Liste et caractéristiques de tous les personnages jouables.</a>
+        </div>
+
+        <div id="tab3" class="tab-pane">
+            <h2>Le Lore et l'Histoire</h2>
+            <p>Détails sur l'univers de Teyvat.</p>
+        </div>
+
+       <div id="tab4" class="tab-pane">
+       <h2>Le Site officiel du jeu.</h2>
+       <a href="https://genshin.hoyoverse.com/en/home">Genshin Impact</a>
+    </div>
+      
+       <div id="tab5" class="tab-pane">
+       <h2>Une liste d'images du jeu</h2>
+       <a href="https://search.brave.com/images?q=genshin+impact&source=web"><b><br>Liste d'images du jeu</b></a>  
+                 </div>
+           </div>
+     </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabLinks = document.querySelectorAll('.tab-link');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Empêche le défilement par défaut de l'ancre
+
+                document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                
+                  document.querySelector(targetId).classList.add('active');
+            });
+        });
+        
+        
+        if (tabLinks.length > 0) {
+            tabLinks[0].click();
+        }
+    });
+</script>
+</body>
+</html>

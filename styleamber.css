@@ -1,0 +1,119 @@
+.encadre-arrondi {
+    border: 3px solid #e74c3c; 
+    border-radius: 15px; 
+    padding: 15px; 
+    background-color: #fcebeb; 
+    width: 60%; 
+    margin: 30px auto 20px auto; 
+    
+    text-align: center;
+    font-family: Calibri;
+    color: red;
+    text-decoration: underline;
+}
+
+.encadre-paragraphe {
+    border: 1px solid black; 
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 70%;
+    background-color: white;
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center; 
+    
+}
+
+
+body {
+  background-image: url('Genshin wallpaper.webp'); /* Fond Genshin Impact clair */
+  background-size: cover;          /* couvre tout l’écran */
+  background-position: center;     /* centré */
+  background-attachment: fixed;    /* reste fixe au défilement */
+  margin: 0;
+  font-family: Calibri, sans-serif;
+  color: #222;                     
+  position: relative;
+  min-height: 100vh;
+}
+
+
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(3px);           
+  z-index: -1;
+}
+
+p {
+    font-family: Calibri;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 20px; 
+}
+
+h2 {
+      font-family: Calibri; 
+      font-size: 30px;
+      text-decoration: underline; 
+      color: red; 
+}
+
+.tabs-container {
+    display: flex;          /* onglets à gauche, contenu à droite */
+    gap: 20px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* menu vertical */
+.tabs-menu {
+    display: flex;
+    flex-direction: column; /* les onglets s'empilent */
+    border-right: 2px solid #ccc;
+    padding-right: 10px;
+}
+
+/* style des onglets verticaux */
+.tab-link {
+    display: block;          /* pleine largeur */
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* coins arrondis à gauche */
+    margin-bottom: 5px;
+}
+
+.tab-link.active {
+    background-color: #fff;
+    border-color: #ccc;
+    color: red;
+}
+
+/* contenu à droite */
+.tabs-content {
+    flex: 1;                 /* prend le reste de la largeur */
+}
+
+/* Cache tous les contenus d'onglet par défaut */
+.tab-pane {
+    display: none;
+    padding: 20px; /* Ajout d'un peu d'espace pour une meilleure présentation */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Affiche uniquement le contenu de l'onglet actif */
+.tab-pane.active {
+    display: block;
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Liste des personnages de Genshin Impact.</title>
+<link rel="stylesheet" href="styleamber.css?v=3">
+</head>
+<body>
+<h1 class="encadre-arrondi">Liste des Personnages de Genshin Impact</h1>
+<div class="encadre-paragraphe">
+    <h2>Filtrer par Élément</h2>
+    <p>Cliquez sur un bouton pour afficher uniquement les personnages de cet élément. Cliquez sur "Tous" pour afficher toute la liste.</p>
+
+    <div class="filtres-element">
+        <button class="filtre-btn active" data-element="all">Tous</button>
+        <button class="filtre-btn" data-element="pyro">Pyro 🔥</button>
+        <button class="filtre-btn" data-element="hydro">Hydro 💧</button>
+        <button class="filtre-btn" data-element="anemo">Anemo 🍃</button>
+        <button class="filtre-btn" data-element="geo">Géo 🪨</button>
+        <button class="filtre-btn" data-element="electro">Électro ⚡</button>
+        <button class="filtre-btn" data-element="cryo">Cryo ❄️</button>
+        <button class="filtre-btn" data-element="dendro">Dendro 🌿</button>
+    </div>
+
+    <div class="liste-personnages" id="liste-globale">
+        
+        <a href="amber.html" class="carte-personnage element-pyro rarete-4">
+            <div class="portrait"><img src="Amber_icon.webp" alt="Portrait d'Amber"></div>
+            <div class="nom-personnage">Amber</div>
+        </a>
+
+        <a href="page_barbara.html" class="carte-personnage element-hydro rarete-4">
+            <div class="portrait"><img src="images/barbara.webp" alt="Portrait de Barbara"></div>
+            <div class="nom-personnage">Barbara</div>
+        </a>
+
+        </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filtre-btn');
+        const characterCards = document.querySelectorAll('.carte-personnage');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // 1. Gérer l'état actif des boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // 2. Déterminer l'élément à filtrer
+                const element = this.getAttribute('data-element');
+
+                // 3. Filtrer les cartes de personnages
+                characterCards.forEach(card => {
+                    // Afficher toutes les cartes si l'élément est 'all'
+                    if (element === 'all') {
+                        card.style.display = 'block'; // ou 'inline-block' selon votre CSS
+                    } 
+                    // Sinon, vérifier si la carte contient la classe de l'élément
+                    else if (card.classList.contains(`element-${element}`)) {
+                        card.style.display = 'block';
+                    } 
+                    // Masquer la carte
+                    else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Simuler le clic sur le bouton "Tous" au chargement pour tout afficher
+        document.querySelector('.filtre-btn[data-element="all"]').click();
+    });
+</script>
+</body>
+</html>

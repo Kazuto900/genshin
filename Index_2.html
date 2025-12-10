@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Liste des personnage de Genshin Impact.</title>
+<link rel="stylesheet" href="style2.css"> 
+</head>
+<body>
+<body>
+<h1 class="encadre-arrondi">Liste des personnages jouables du jeu</h1>
+<div class="encadre-paragraphe">
+    <div class="filtres-encadres">
+        <h3>Filtrer par Rareté :</h3>
+        <div class="filtres-rarete">
+            <button class="filtre-btn rarete-btn active" data-filter-type="rarete" data-filter-value="all">Toutes ⭐</button>
+            <button class="filtre-btn rarete-btn" data-filter-type="rarete" data-filter-value="5">5 ⭐</button>
+            <button class="filtre-btn rarete-btn" data-filter-type="rarete" data-filter-value="4">4 ⭐</button>
+        </div>
+
+        <h3>Filtrer par Élément :</h3>
+        <div class="filtres-element">
+            <button class="filtre-btn element-btn active" data-filter-type="element" data-filter-value="all">Tous ⚪</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="pyro">Pyro 🔥</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="hydro">Hydro 💧</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="anemo">Anemo 🍃</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="geo">Géo 🪨</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="electro">Électro ⚡</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="cryo">Cryo ❄️</button>
+            <button class="filtre-btn element-btn" data-filter-type="element" data-filter-value="dendro">Dendro 🌿</button>
+        </div>
+    </div>
+    
+    <div class="liste-personnages" id="liste-globale">
+        <a href="amber.html" class="carte-personnage filter-rarete-4 filter-element-pyro">
+            <div class="portrait rarete-4"><img src="Amber_icon.webp" alt="Amber"></div>
+            <div class="nom-personnage">Amber</div>
+        </a>
+
+        <a href="klee.html" class="carte-personnage filter-rarete-5 filter-element-pyro">
+            <div class="portrait rarete-5"><img src="Klee_icon.webp" alt="Klee"></div>
+            <div class="nom-personnage">Klee</div>
+        </a>
+
+        <a href="bennett.html" class="carte-personnage filter-rarete-4 filter-element-pyro">
+            <div class="portrait rarete-4"><img src="Bennett_icon.webp" alt="Bennett"></div>
+            <div class="nom-personnage">Bennett</div>
+        </a>
+        
+        <a href="diluc.html" class="carte-personnage filter-rarete-5 filter-element-pyro">
+            <div class="portrait rarete-5"><img src="Diluc_icon.webp" alt="Diluc"></div>
+            <div class="nom-personnage">Diluc</div>
+        </a>
+        
+        <a href="xianglng.html" class="carte-personnage filter-rarete-4 filter-element-pyro">
+            <div class="portrait rarete-4"><img src="Xiangling_icon.webp" alt="Xiangling"></div>
+            <div class="nom-personnage">Xiangling</div>
+        </a>
+        
+        </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filtre-btn');
+        const characterCards = document.querySelectorAll('.carte-personnage');
+
+        // Variables pour stocker les filtres actifs
+        let activeRarity = 'all'; 
+        let activeElement = 'all';
+
+        // Fonction principale de filtrage
+        function applyFilters() {
+            characterCards.forEach(card => {
+                let isRarityMatch = false;
+                let isElementMatch = false;
+
+                // 1. Vérification de la rareté
+                if (activeRarity === 'all') {
+                    isRarityMatch = true;
+                } else if (card.classList.contains(`filter-rarete-${activeRarity}`)) {
+                    isRarityMatch = true;
+                }
+
+                // 2. Vérification de l'élément
+                if (activeElement === 'all') {
+                    isElementMatch = true;
+                } else if (card.classList.contains(`filter-element-${activeElement}`)) {
+                    isElementMatch = true;
+                    // N.B. : Vous devez ajouter ces classes de filtre à toutes vos cartes dans le HTML
+                }
+
+                    // DANS LA FONCTION applyFilters()
+
+                   // 3. Afficher UNIQUEMENT si les deux filtres correspondent
+                    if (isRarityMatch && isElementMatch) {
+                     // CORRECTION : Utilisez 'inline-block' pour l'alignement horizontal
+                      card.style.display = 'inline-block'; 
+                      } else {
+                        card.style.display = 'none'; 
+                     }
+            });
+        }
+
+        // Écouteur d'événement pour tous les boutons de filtre
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filterType = this.getAttribute('data-filter-type');
+                const filterValue = this.getAttribute('data-filter-value');
+                
+                // Gérer l'état actif des boutons du MÊME type
+                document.querySelectorAll(`.${filterType}-btn`).forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                // Mettre à jour la variable de filtre correspondante
+                if (filterType === 'rarete') {
+                    activeRarity = filterValue;
+                } else if (filterType === 'element') {
+                    activeElement = filterValue;
+                }
+
+                // Appliquer les nouveaux filtres
+                applyFilters();
+            });
+        });
+        
+        // Initialisation : simuler le clic sur les boutons "Tous" au chargement
+        document.querySelector('.rarete-btn[data-filter-value="all"]').click();
+        document.querySelector('.element-btn[data-filter-value="all"]').click();
+    });
+</script>
+</body>
+</html>
+</body>
+</html>

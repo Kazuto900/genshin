@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Liste des personnage de Genshin Impact.</title>
+<link rel="stylesheet" href="style2.css"> 
+</head>
+<body>
+<h1 class="encadre-arrondi">Liste des personnages jouables du jeu</h1>
+<div class="tabs-container">
+    
+    <div class="tabs-menu">
+        <a href="#tab1" class="tab-link active">Pyro</a>
+        <a href="#tab2" class="tab-link">Hydro</a>
+        <a href="#tab3" class="tab-link">Cryo</a>
+        <a href="#tab4" class="tab-link">Anémo</a>
+        <a href="#tab5" class="tab-link">Dendro</a>
+        <a href="#tab6" class="tab-link">Géo</a>
+        <a href="#tab7" class="tab-link">Electro</a>
+
+    </div>
+    <div class="tabs-content">
+        <div id="tab1" class="tab-pane active">
+        <div class="liste-personnages">
+            <h2>Liste de tous les personnages Pyro</h2>
+            <div class="grille-personnages">
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Amber_icon.webp" alt="Amber">
+    </div>
+    <div class="nom-personnage">Amber</div>
+  </div>
+
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Klee_icon.webp" alt="Klee">
+    </div>
+    <div class="nom-personnage">Klee</div>
+  </div>
+
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Bennett_icon.webp" alt="Bennett">
+    </div>
+    <div class="nom-personnage">Bennett</div>
+  </div>
+
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Diluc_icon.webp" alt="Diluc">
+    </div>
+    <div class="nom-personnage">Diluc</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Xiangling_icon.webp" alt="Xiangling">
+    </div>
+    <div class="nom-personnage">Xiangling</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Hu_Tao_icon.webp" alt="Hu Tao">
+    </div>
+    <div class="nom-personnage">Hu Tao</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Yanfei_icon.webp" alt="Yanfei">
+    </div>
+    <div class="nom-personnage">Yanfei</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Xinyan_icon.webp" alt="Xinyan">
+    </div>
+    <div class="nom-personnage">Xinyan</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Thoma_icon.webp" alt="Thomas">
+    </div>
+    <div class="nom-personnage">Thomas</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Yoimiya_icon.webp" alt="Yoimiya">
+    </div>
+    <div class="nom-personnage">Yoimiya</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Dehya_icon.webp" alt="Dehya">
+    </div>
+    <div class="nom-personnage">Dehya</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Lyney_icon.webp" alt="Lyney">
+    </div>
+    <div class="nom-personnage">Lyney</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Chevreuse_icon.webp" alt="Chevreuse">
+    </div>
+    <div class="nom-personnage">Chevreuse</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-4">
+    <div class="portrait">
+      <img src="Gaming_icon.webp" alt="Gaming">
+    </div>
+    <div class="nom-personnage">Gaming</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Arlecchino_icon.webp" alt="Arlecchino">
+    </div>
+    <div class="nom-personnage">Arlecchino</div>
+  </div>
+ 
+  <div class="carte-personnage rarete-5">
+    <div class="portrait">
+      <img src="Mavuika_icon.webp" alt="Mavuika">
+    </div>
+    <div class="nom-personnage">Mavuika</div>
+  </div>
+
+</div>
+</div>
+         </div>
+
+        <div id="tab2" class="tab-pane">
+            <h2>Liste de tous les personnages Hydro</h2>
+            <p></p>
+        </div>
+
+        <div id="tab3" class="tab-pane">
+            <h2>Liste de tous les personnages Cryo</h2>
+        </div>
+
+       <div id="tab4" class="tab-pane">
+       <h2>Liste de tous les personnages Anémo</h2>
+    </div>
+      
+       <div id="tab5" class="tab-pane">
+       <h2>Liste de tous les personnages Dendro</h2>
+   </div>
+
+       <div id="tab6" class="tab-pane">
+       <h2>Liste de tous les personnages Géo</h2>
+   </div>
+
+       <div id="tab7" class="tab-pane">
+       <h2>Liste de tous les personnages Electro</h2>
+   </div>
+</div> 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabLinks = document.querySelectorAll('.tab-link');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Empêche le défilement par défaut de l'ancre
+
+                document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                
+                  document.querySelector(targetId).classList.add('active');
+            });
+        });
+        
+        
+        if (tabLinks.length > 0) {
+            tabLinks[0].click();
+        }
+    });
+</script>
+</body>
+</html>

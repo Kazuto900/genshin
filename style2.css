@@ -1,0 +1,300 @@
+.encadre-arrondi {
+    border: 3px solid #e74c3c; 
+    border-radius: 15px; 
+    padding: 15px; 
+    background-color: #fcebeb; 
+    width: 60%; 
+    margin: 30px auto 20px auto; 
+    
+    text-align: center;
+    font-family: Calibri;
+    color: red;
+    text-decoration: underline;
+
+    
+}
+.encadre-paragraphe {
+    border: 1px solid black; 
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px auto;
+    width: 70%;
+    background-color: white;
+    
+    /* Changement CLEF : Empile les enfants (filtres, puis liste) verticalement */
+    display: flex; 
+    flex-direction: column; /* De 'row' à 'column' */
+    gap: 20px; 
+    align-items: center; /* Centre les filtres horizontalement dans le conteneur */
+}
+.filtres-encadres {
+    /* Reprise du style de .encadre-arrondi */
+    border: 3px solid #e74c3c;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #fcebeb;
+    width: 90%; /* Ajusté pour prendre plus de place dans le conteneur parent */
+    margin: 20px auto;
+    
+    text-align: center;
+    font-family: Calibri;
+    color: #222; /* Couleur de texte plus foncée pour lisibilité */
+}
+
+.filtres-encadres h3 {
+    /* Style du titre à l'intérieur de l'encadré */
+    color: red;
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+.grille-personnages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.carte-personnage {
+  width: 150px;
+  background-color: #2f2f3f;
+  border-radius: 15px;
+  border: 2px solid #999;
+  padding: 10px;
+  text-align: center;
+  font-family: Calibri, sans-serif;
+  margin: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.carte-personnage {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte-personnage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 200, 150, 0.7);
+  cursor: pointer;
+}
+
+
+
+.portrait {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  border-radius: 50%;          /* rend le cadre rond */
+  overflow: hidden;            /* cache les coins de l’image */
+  display: flex;               /* centre l’image */
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait img {
+    /* Nouvelle taille pour laisser le fond de rareté visible */
+    width: 90%; 
+    height: 90%;
+    
+    object-fit: cover;
+    border-radius: 50%; 
+}
+
+
+.nom-personnage {
+  font-size: 18px;
+  color: white;
+}
+
+/* Style pour les personnages 4 Étoiles (Violet) */
+.rarete-4 .portrait {
+    /* Le dégradé radial (violet) doit rester l'arrière-plan du cercle du portrait */
+    background: radial-gradient(circle, #b080ff, #5e3a94);
+    /* La bordure extérieure (violet clair) */
+    border-color: #b080ff;
+    
+    /* Assurez-vous que le portrait est un cercle */
+    border-radius: 50%;
+    /* Et que l'image à l'intérieur ne déborde pas */
+    overflow: hidden;
+}
+
+/* Style pour les personnages 5 Étoiles (Doré) */
+.rarete-5 .portrait {
+    /* Le dégradé radial (doré) doit rester l'arrière-plan du cercle du portrait */
+    background: radial-gradient(circle, #c39a2b, #7d5d1f);
+    /* La bordure extérieure (doré clair) */
+    border-color: #c39a2b;
+
+    /* Assurez-vous que le portrait est un cercle */
+    border-radius: 50%;
+    /* Et que l'image à l'intérieur ne déborde pas */
+    overflow: hidden;
+}
+
+/* Règle générale déjà présente, mais essentielle pour le cercle */
+.portrait {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 50%; /* <<== C'est la ligne clé pour la forme circulaire */
+    overflow: hidden;
+    /* ... autres styles ... */
+}
+
+
+.liste-personnages {
+    display: flex;
+    flex-wrap: wrap; /* LIGNE CLEF : permet le retour à la ligne */ 
+    justify-content: center; /* Centre les cartes sur la ligne */
+    gap: 30px;
+    padding: 20px;
+    width: 100%; /* S'assure qu'elle prend toute la largeur du conteneur parent */
+}
+
+
+p {
+    font-family: Calibri;
+    font-style: italic;
+    color: green;
+    text-decoration: underline;
+    font-size: 20px; 
+}
+
+b { 
+    font-family: Calibri;
+    font-size: 15px; 
+}
+c {
+    font-family: Calibri;
+    font-size: 20px;
+    
+}
+
+body {
+  background-image: url('Genshin wallpaper.webp'); /* Fond Genshin Impact clair */
+  background-size: cover;          /* couvre tout l’écran */
+  background-position: center;     /* centré */
+  background-attachment: fixed;    /* reste fixe au défilement */
+  margin: 0;
+  font-family: Calibri, sans-serif;
+  color: #222;                     /* texte légèrement foncé */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* filtre doux pour lisibilité du texte */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* voile blanc léger */
+  backdrop-filter: blur(3px);           /* effet de flou */
+  z-index: -1;
+}
+
+
+
+.tabs-container {
+    width: 80%;
+    margin: 40px auto;
+    font-family: Calibri, sans-serif;
+}
+
+.tabs-menu {
+    border-bottom: 2px solid #ccc; 
+}
+
+.tab-link {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-bottom: none; 
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+}
+
+.tab-link.active {
+    background-color: #fff;
+    border-color: #ccc;
+    color: red; 
+}
+
+
+.tab-pane {
+    display: none;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-top: none;
+    border-radius: 15px; 
+    background-color: white;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+
+.tab-pane {
+    display: none; 
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.tab-pane.active {
+    display: block; 
+}
+
+
+.tab-pane {
+     display: none;
+     padding: 20px;
+     border : 1px solid lightgray
+     border-radius: 15px; 
+     background-color: white; 
+}
+
+.tab-pane.active {
+     display: block: 
+}
+
+/* Style des boutons de filtre */
+.filtre-btn {
+    padding: 8px 12px;
+    margin: 4px;
+    
+    /* Style de mini-encadré */
+    border: 2px solid #e74c3c; /* Bordure rouge */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    color: #e74c3c; /* Texte rouge */
+    
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    font-weight: bold;
+}
+
+/* Style du bouton actif/sélectionné */
+.filtre-btn.active {
+    background-color: #e74c3c; /* Fond rouge */
+    color: white; /* Texte blanc */
+    border-color: #c0392b; /* Bordure rouge foncé */
+}
+
+/* Effet au survol */
+.filtre-btn:hover:not(.active) {
+    background-color: #fcebeb; /* Couleur de fond de l'encadré principal au survol */
+    color: #c0392b;
+}
+
+
